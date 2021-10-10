@@ -32,3 +32,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
 # OPA
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.opa.eligible_device=true
+
+# Overlay
+PRODUCT_PACKAGES += \
+    TeleServiceOverlay
