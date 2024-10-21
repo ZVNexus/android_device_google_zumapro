@@ -527,7 +527,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.cbd.modem_removable = "1" \
 	ro.vendor.cbd.modem_type = "s5100sit" \
 	persist.vendor.sys.modem.logging.br_num=10 \
-	persist.vendor.sys.modem.logging.enable=true
+	persist.vendor.sys.modem.logging.enable=false
+
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.sys.modem.logging.enable=true
+endif
 
 # Enable silent CP crash handling
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
